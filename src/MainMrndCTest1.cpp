@@ -95,8 +95,7 @@ int main(){
 	*/
 	//Test Concat4 Strings
 
-	
-	/*int nums[5] = { 1, 3, 5 };
+	int nums[5] = { 1, 3, 5 };
 	int nums2[5] = { 2, 4, 6 };
 	//Last 1 is for checking whether A is circular or not .6 should again point to 1
 	int ans[10] = { 1, 2, 3, 4, 5, 6, 1 };
@@ -115,5 +114,5 @@ int main(){
 
 	int len = merge_circularlists(&head1, &head2);
 	printf("\n%d", len);
-	return 0;*/
+	return 0;
 }
