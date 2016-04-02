@@ -38,7 +38,7 @@ int between_days(struct node *date1head, struct node *date2head){
 	struct node* temp2 = date2head;
 	while (ind != count){
 		break;
-	}
+	}*/
 	return -1;
-	*/
+	
 }

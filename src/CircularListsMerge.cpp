@@ -43,17 +43,17 @@ int merge_circularlists(struct node **head1, struct node **head2){
 	return -1;
 	struct node* temp = *head1;
 	temp = temp->next;
-	while (temp!= *head1 ){
+	while (temp->next!= *head1 && temp->next!=NULL){
 		temp = temp->next;
 	}
-	temp->next = *head1;
+	temp->next = NULL;
 	temp = *head2;
 	temp = temp->next;
-	while (temp!= *head2){
+	while (temp->next!= *head2&& temp->next!=NULL){
 
 		temp = temp->next;
 	}
-	temp->next = *head2;
+	temp->next = NULL;
 	*head1 = merge(*head1, *head2);
 	temp = *head1;
 	int len = 1;
