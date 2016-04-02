@@ -31,7 +31,61 @@ Difficulty : Medium
 #include <stdio.h>
 #include <math.h>
 
+void find_AP(int* res, int* arr, int len);
+
+void find_GP(int* res, int* arr, int len);
 int * find_sequences(int *arr, int len){
-	//Return final array which has 6indexes [AP1_S,AP1_E,AP2_S,AP2_E,GP1_S,GP2_E]
+	//Return final array which has 6indexes [AP1_S,AP1_E,AP2_S,AP2_E,GP1_S,GP2_E]ff
+	if (arr==NULL || len<0)
 	return NULL;
+	int res[6] = { 0,0,0,0,0,0 };
+	find_AP(res, arr, len);
+	find_GP(res, arr, len);
+	for (int i = 0; i < 6; i++)
+		arr[i] = res[i];
+	return arr;
+}
+
+void find_AP(int* res,int* arr, int len){
+	int index = 0;
+	while (index < len-2){
+		if (arr[index + 2] - arr[index + 1] == arr[index + 1] - arr[index]){
+			res[0] = index;
+			index++;
+			while (index < len - 2 && (arr[index + 2] - arr[index + 1] == arr[index + 1] - arr[index]))
+				index++;
+			res[1] = index+1;
+			break;
+		}
+		index++;
+	}
+	while (index < len - 2){
+		if (arr[index + 2] - arr[index + 1] == arr[index + 1] - arr[index]){
+			res[2] = index;
+			index++;
+			while (index < len - 2 && (arr[index + 2] - arr[index + 1] == arr[index + 1] - arr[index]))
+				index++;
+			res[3] = index+1;
+			printf("\n%d %d", res[2], res[3]);
+			break;
+		}
+		index++;
+	}
+
+}
+
+
+void find_GP(int* res, int* arr, int len){
+	int index = 0;
+	while (index < len - 2){
+		if (arr[index + 2] / (arr[index + 1]+0.0) == arr[index + 1] / (arr[index]+0.0)){
+			res[4] = index;
+			index++;
+			while (index < len - 2 && (arr[index + 2] / arr[index + 1] == arr[index + 1] / arr[index]))
+				index++;
+			res[5] = index+1;
+			break;
+		}
+		index++;
+	}
 }

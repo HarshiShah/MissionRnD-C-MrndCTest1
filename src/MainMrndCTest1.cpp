@@ -94,4 +94,26 @@ int main(){
 	printf("Total Days - %d\n",days);
 	*/
 	//Test Concat4 Strings
+
+	
+	/*int nums[5] = { 1, 3, 5 };
+	int nums2[5] = { 2, 4, 6 };
+	//Last 1 is for checking whether A is circular or not .6 should again point to 1
+	int ans[10] = { 1, 2, 3, 4, 5, 6, 1 };
+
+	int l1 = 3, l2 = 3, i;
+	struct node *head1 = NULL;
+	struct node *head2 = NULL;
+	for (i = l1 - 1; i >= 0; i--){
+		addNode(&head1, nums[i]);
+	}
+	for (i = l2 - 1; i >= 0; i--){
+		addNode(&head2, nums2[i]);
+	}
+	make_it_circular(head1);
+	make_it_circular(head2);
+
+	int len = merge_circularlists(&head1, &head2);
+	printf("\n%d", len);
+	return 0;*/
 }
